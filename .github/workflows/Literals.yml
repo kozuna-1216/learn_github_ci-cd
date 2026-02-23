@@ -1,0 +1,13 @@
+name: Literals
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep 'LITERAL'
+        env:
+          LITERAL_NULL: ${{ null }}  # nullリテラルを環境変数として定義
+          LITERAL_BOOLEAN: ${{ true }}  # booleanリテラルを環境変数として定義
+          LITERAL_NUMBER: ${{ 123 }}  # numberリテラルを環境変数として定義
+          LITERAL_STRING: ${{ 'Hello' }}  # stringリテラルを環境変数として定義
+          LITERAL_OMIT_STRING: World!  # 文字列リテラルから一部を省略して定義
