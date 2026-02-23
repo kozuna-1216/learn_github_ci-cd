@@ -1,0 +1,9 @@
+name: Intermediate environment variables
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}  # GitHub Actionsのコンテキストから環境変数を定義
+    steps:
+      - run: echo "${ACTOR}"  # 定義した環境変数を使用してコマンドを実行
