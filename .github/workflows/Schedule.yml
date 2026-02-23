@@ -6,4 +6,5 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: date  # 現在の日付と時刻を表示するコマンドを実行
+      - name: Check date
+        run: date
