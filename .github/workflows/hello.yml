@@ -3,6 +3,8 @@ on: push        # ワークフローをトリガーするイベント
 jobs:           # ジョブの定義
   hello:        # ジョブID
     runs-on: ubuntu-latest  # ランナー(Ubuntuの最新バージョン)
+    env:
+      USERNAME: ${{ vars.USERNAME }}  # リポジトリの変数を環境変数として定義
     steps:       # ジョブのステップ
-      - run: echo "Hello, World!"  # コマンドを実行
+      - run: echo "Hello, World! ${USERNAME}"  # コマンドを実行
       - uses: actions/checkout@v4  # アクションの呼び出し
